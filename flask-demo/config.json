@@ -1,0 +1,8 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/myflaskapp",
+    "blog_name": "Automation Enrollment",
+    "underline_text": "Nitya If you click the Submit button, the form-data will be sent to a page called \"/contact\"."
+  }
+}
