@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/main.css">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1 class="title">Welcome to my Blogs Page</h1>
+
+    {% for post in blog %}
+    <h2 class="post-title">{{ post.sno }}. {{ post.heading }}</h2>
+  <div class="post-preview" >
+      <a href="/blog/{{post.slug}}">
+          <h2 class="post-title">
+              {{ post.subheading }}
+          </h2>
+          <h3 class ="post-subtitle">
+              {{post.content}}
+          </h3>
+      </a>
+      <p class="post-meta">Posted by {{ post.slug }},  email:- <a href="#"> {{ post.email }} </a><br>
+          on {{ post.date }}
+      </p>
+  </div>
+   {% endfor %}
+  </body>
+</html>

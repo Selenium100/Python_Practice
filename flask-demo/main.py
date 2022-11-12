@@ -37,17 +37,24 @@ class Blog(db.Model):
     subheading = db.Column(db.String(20), nullable=False)
     date = db.Column(db.String(20), nullable=False)
     content = db.Column(db.String(10000), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
 
 
 @app.route('/')
 def welcome():
-    return "Welcome to Flask app"
+    blog = Blog.query.filter_by().all()
+    return render_template('welcome.html', blog=blog)
 
 
 @app.route('/blog/<string:blog_slug>', methods=['GET'])
 def blog(blog_slug):
     blog = Blog.query.filter_by(slug=blog_slug).first()
     return render_template("blog.html", blog=blog)
+
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+def login():
+    return render_template("login.html")
 
 
 @app.route('/contact', methods=['GET', 'POST'])
