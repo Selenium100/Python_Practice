@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+button#edit {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+
+}
+button#delete {
+  background-color: red;
+  border: none;
+  color: white;
+
+}
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Add/Edit Post</h2>
+
+<form action="/edit/{{sno}}" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="firstname">firstname</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="firstname" name="firstname" value="" placeholder="firstname..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lastname">lastname</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lastname" name="lastname" value="" placeholder="lastname..">
+    </div>
+
+    <div class="row">
+    <div class="col-25">
+      <label for="subject">subject</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="subject" name="subject" value="" placeholder="subject..">
+    </div>
+  </div>
+     </div>
+
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+
+
+
+</body>
+</html>
+

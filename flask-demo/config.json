@@ -5,6 +5,10 @@
     "blog_name": "Automation Enrollment",
     "underline_text": "Nitya If you click the Submit button, the form-data will be sent to a page called \"/contact\".",
     "gmail-user" : "nityaranjan190592@gmail.com",
-    "gmail-password" : "dojbienqubwhzgcl"
+    "gmail-password" : "dojbienqubwhzgcl",
+    "no_of_posts": 4,
+    "admin_user": "nitya@admin.com",
+    "admin_password": "Selenium@123",
+    "upload_location": "C:\\Users\\nitya\\PycharmProjects\\firsrproj\\flask-demo\\static"
   }
 }

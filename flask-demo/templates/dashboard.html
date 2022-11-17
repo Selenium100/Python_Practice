@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<style>
+button#AdminTaskdbEdit {
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 140px;
+        height: 45px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+}
+button#submit {
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 140px;
+        height: 45px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+}
+button#AdminTaskdbAdd {
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 180px;
+        height: 45px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+}
+button#logout {
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 180px;
+        height: 45px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+}
+button#delete {
+  display: inline-block;
+        background-color: red;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 140px;
+        height: 45px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+
+}
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<header class="masthead" style="background-image: url('{{ url_for('static' , filename='admin.jpg') }}')">
+  <div class ='overlay'></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Admin Pannel</h1>
+          <form action="/logout">
+          <button id="logout" value="logout">Log Out</button>
+            </form>
+          <span class="subheading"><h1><u>Manage your posts and change them</u></h1></span>
+          <h1><u>Upload A File</u></h1>
+          <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" name="file1">
+            <button type="submit" id="submit" value="submit">Submit</button>
+          </form>
+          <a href="/AdminTaskdbEdit/0"><button id="AdminTaskdbAdd" class="btn btn-primary">Add New Posts</button></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<body>
+
+
+
+<table style="width:100%">
+  <tr>
+    <th>sno</th>
+    <th>heading</th>
+    <th>subheading</th>
+    <th>slug</th>
+    <th>content</th>
+    <th>email</th>
+    <th>date</th>
+    <th>edit</th>
+    <th>delete</th>
+  </tr>
+
+  {% for post in blog %}
+  <tr>
+    <td>{{ post.sno }}</td>
+    <td>{{ post.heading }}</td>
+    <td>{{ post.subheading }}</td>
+    <td>{{ post.slug }}</td>
+    <td>{{ post.content }}</td>
+    <td>{{ post.email }}</td>
+    <td>{{ post.date }}</td>
+    <td><a href="/AdminTaskdbEdit/{{post.sno}}"><button id="AdminTaskdbEdit" class="btn btn-primary">Edit</button></a></td>
+    <td><a href="/delete/{{post.sno}}"><button id="delete" class="btn btn-primary">Delete</button></a></td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+
+
+</body>
+</html>
+

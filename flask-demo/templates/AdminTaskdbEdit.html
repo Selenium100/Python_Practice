@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+button#edit {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+
+}
+button#delete {
+  background-color: red;
+  border: none;
+  color: white;
+
+}
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Add/Edit Post</h2>
+
+<form action="/AdminTaskdbEdit/{{sno}}" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="heading">Heading</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="heading" name="heading" value="{{blog.heading}}" placeholder="heading..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subheading">Subheading</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="subheading" name="subheading" value="{{blog.subheading}}" placeholder="subheading..">
+    </div>
+
+    <div class="row">
+    <div class="col-25">
+      <label for="slug">Slug</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="slug" name="slug" value="{{blog.slug}}" placeholder="slug..">
+    </div>
+     </div>
+
+    <div class="row">
+    <div class="col-25">
+      <label for="content">Content</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="content" name="content" value="{{blog.content}}" placeholder="content..">
+    </div>
+     </div>
+
+    <div class="row">
+    <div class="col-25">
+      <label for="email">Email</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="email" name="email" value="{{blog.email}}" placeholder="email..">
+    </div>
+     </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+
+
+
+</body>
+</html>
+
