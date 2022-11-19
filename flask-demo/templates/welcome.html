@@ -6,6 +6,50 @@
     <link rel="stylesheet" href="/main.css">
     <title>Welcome</title>
   </head>
+  <style>
+     a#next {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  float: left;
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 140px;
+        height: 60px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+
+}
+ a#previous {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  float: right;
+  display: inline-block;
+        background-color: #1c87c9;
+        color: #eee;
+        margin: 25px;
+        position: relative;
+        width: 140px;
+        height: 60px;
+        border-radius: 3px;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 0 #999;
+
+}
+
+
+  </style>
   <body>
 
     <h1 class="title">Welcome to my Blogs Page</h1>
@@ -35,6 +79,9 @@
       </p>
   </div>
    {% endfor %}
+
+  <a id="next" href="{{prev}}" >&larr; Older Posts</a>
+  <a id="previous" href="{{next}}" >Newer Post &rarr;</a>
 
   </body>
 </html>

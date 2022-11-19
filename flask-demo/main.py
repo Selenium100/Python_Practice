@@ -1,3 +1,5 @@
+import math
+
 from flask import Flask, render_template, request, session, redirect
 from flask_sqlalchemy import SQLAlchemy
 import json
@@ -49,7 +51,37 @@ class Blog(db.Model):
 @app.route('/')
 def welcome():
     blog = Blog.query.filter_by().all()
-    return render_template('welcome.html', blog=blog)
+    last = math.ceil(len(blog)/int(params['display_no_of_posts']))
+    page = request.args.get('page')
+    if (not str(page).isnumeric()):
+        page = 1
+    page = int(page)
+    blog = blog[(page-1)*int(params['display_no_of_posts']):(page-1)*int(params['display_no_of_posts'])+int(params['display_no_of_posts'])]
+    #Pagination Logic
+    #First
+    if page == 1:
+        prev = '#'
+        next = '/?page='+ str(page+1)
+    elif (page == last):
+        next = '#'
+        prev = '/?page=' + str(page - 1)
+
+    else:
+        prev = '/?page=' + str(page - 1)
+        next = '/?page='+ str(page+1)
+
+    #Prev = #
+    #Next = page+1
+
+    #Middle
+    #prev = page-1
+    #next = page+1
+
+    #Last
+    #prev = page -1
+    #next = #
+
+    return render_template('welcome.html', blog=blog,next=next,prev=prev)
 
 
 @app.route('/blog/<string:blog_slug>', methods=['GET'])
@@ -174,6 +206,14 @@ def delete(sno):
         db.session.delete(blog)
         db.session.commit()
     return redirect('/dashboard')
+
+@app.route('/effortdelete/<string:sno>')
+def effortdelete(sno):
+    if ('user' in session and session['user'] == params['admin_user']):
+        mydata = Mydata.query.filter_by(sno=sno).first()
+        db.session.delete(mydata)
+        db.session.commit()
+    return redirect('/effortdashboard')
 
 
 

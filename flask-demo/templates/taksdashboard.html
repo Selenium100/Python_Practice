@@ -30,8 +30,6 @@ table, th, td {
 <h1><u><b>Effort Tracking</b></u></h1>
 
 <a href="/edit/0"><button id="add" class="btn btn-primary">Add a new post</button></a>
-
-<h1>Upload a file</h1>
 <hr>
 <h1>Edit Posts</h1>
 <table style="width:100%">
@@ -53,7 +51,7 @@ table, th, td {
     <td>{{ post.subject }}</td>
     <td>{{ post.date }}</td>
     <td><a href="/edit/{{post.sno}}"><button id="edit" class="btn btn-primary">Edit</button></a></td>
-    <td><button id="delete" class="btn btn-primary">Delete</button></td>
+    <td><a href="/effortdelete/{{post.sno}}"><button id="delete" class="btn btn-primary">Delete</button></a></td>
 
   </tr>
   {% endfor %}

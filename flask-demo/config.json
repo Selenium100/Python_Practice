@@ -9,6 +9,7 @@
     "no_of_posts": 4,
     "admin_user": "nitya@admin.com",
     "admin_password": "Selenium@123",
-    "upload_location": "C:\\Users\\nitya\\PycharmProjects\\firsrproj\\flask-demo\\static"
+    "upload_location": "C:\\Users\\nitya\\PycharmProjects\\firsrproj\\flask-demo\\static",
+    "display_no_of_posts": 3
   }
 }
